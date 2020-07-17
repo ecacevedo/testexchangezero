@@ -22,8 +22,8 @@ class ItemsController < ApplicationController
     # @user = User.find(params[:user_id])
     # @item.user = @user
 
-    @category = Category.find(params[:category_id])
-    @item.categories << @category
+    # @category = Category.find(params[:category_id])
+    # @item.categories << @category
 
     if @item.save
       render json: @item, status: :created

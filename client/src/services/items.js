@@ -14,16 +14,16 @@ export const item = async (id) => {
 };
 
 export const postItem = async (ItemData) => {
-  const resp = await api.post('/Items', { Item: ItemData })
+  const resp = await api.post('/items', { item: ItemData })
   return resp.data;
 };
 
 export const putItem = async (id, ItemData) => {
-  const resp = await api.put(`/Items/${id}`, { Item: ItemData })
+  const resp = await api.put(`/items/${id}`, { Item: ItemData })
   return resp.data;
 };
 
 export const deleteItem = async (id) => {
-  const resp = await api.delete(`/Items/${id}`);
+  const resp = await api.delete(`/items/${id}`);
   return resp
 };

@@ -100,12 +100,12 @@ export default class App extends Component {
           />
         )} />
         <br/>
-        <Route path='/' render={() => (
+        <Route path='/' render={(props) => (
           
           <CreateItem
-            
+            {...props}
             handleItemCreate={this.handleItemCreate}
-          
+
           />
           
         )}/>
