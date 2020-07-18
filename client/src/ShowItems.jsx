@@ -13,7 +13,7 @@ export default function ShowItems(props) {
           <img className="items-Image" src={items.image_url}/>
         </>
       ))}
-      <Link to="/"><button>Create Item</button></Link>
+      <Link to="/items/new"><button>Create Item</button></Link>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :update, :destroy]
+  before_action :authorize_request, only: [:create, :update, :destroy]
 
   # GET /items
   def index
@@ -22,6 +23,8 @@ class ItemsController < ApplicationController
     # @user = User.find(params[:user_id])
     # @item.user = @user
 
+
+    # ?????
     # @category = Category.find(params[:category_id])
     # @item.categories << @category
 

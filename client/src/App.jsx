@@ -94,13 +94,13 @@ export default class App extends Component {
           />
         )} />
 
-        <Route path='/' render={() => (
+        <Route exact path='/items' render={() => (
           <ShowItems
           items ={this.state.items}
           />
         )} />
         <br/>
-        <Route path='/' render={(props) => (
+        <Route path='/items/new' render={(props) => (
           
           <CreateItem
             {...props}

@@ -2,7 +2,7 @@ import api from './api-helper';
 
 export const getCategories = async () => {
   const resp = await api.get('/categories');
-  debugger
+  // debugger
   return resp.data;
 }
 

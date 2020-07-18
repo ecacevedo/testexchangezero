@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
 export default class CreateItem extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
+  // constructor(props) {
+  //   super(props)
+    state = {
       item_name: '' 
       }
-  }
+  // }
 
   
 
@@ -22,7 +22,7 @@ export default class CreateItem extends Component {
       <form onSubmit={(e) => {
         e.preventDefault();
         this.props.handleItemCreate(this.state)
-        this.props.history.push('/')
+        this.props.history.push('/items')
       }}
       
       >

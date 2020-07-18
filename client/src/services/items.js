@@ -19,7 +19,7 @@ export const postItem = async (ItemData) => {
 };
 
 export const putItem = async (id, ItemData) => {
-  const resp = await api.put(`/items/${id}`, { Item: ItemData })
+  const resp = await api.put(`/items/${id}`, { item: ItemData })
   return resp.data;
 };
 
