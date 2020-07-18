@@ -1,14 +1,9 @@
 import React, { Component } from 'react'
 
 export default class CreateItem extends Component {
-  // constructor(props) {
-  //   super(props)
     state = {
       item_name: '' 
       }
-  // }
-
-  
 
   handleChange = (e) => {
     const { value } = e.target;

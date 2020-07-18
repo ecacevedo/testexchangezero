@@ -10,10 +10,11 @@ import { loginUser, registerUser, verifyUser, removeToken } from './services/aut
 
 import { getCategories } from './services/categories';
 
-import { allItems, postItem } from './services/items'
+import { allItems, postItem, putItem } from './services/items'
 import ShowCategories from './ShowCategories';
 import ShowItems from './ShowItems'
 import CreateItem from './CreateItem';
+import UpdateItem from './UpdateItem'
 
 
 
@@ -48,6 +49,18 @@ export default class App extends Component {
       items: [...prevState.items, newItem]
     }))
 
+  }
+
+  handleItemUpdate = async (id, itemData) => {
+    const newItem = await putItem(id, itemData);
+    this.setState(prevState => ({
+      items: prevState.items.map(item => item.id === parseInt(id) ? newItem : item)
+    }))
+  }
+
+  handleItemDelete = async (id) => {
+    await deleteItem(id);
+    
   }
 
  
@@ -109,6 +122,16 @@ export default class App extends Component {
           />
           
         )}/>
+        <Route path='/items/:id/edit' render={(props) => {
+          const { id } = props.match.params;
+          const itemItem = this.state.items.find(item => item.id === parseInt(id));
+          return <UpdateItem
+            {...props}
+            handleItemUpdate={this.handleItemUpdate}
+            itemItem={itemItem}
+            id={id}
+          />
+        }} />
         
         <Footer/>
        
