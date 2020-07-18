@@ -13,9 +13,14 @@ export default class Header extends Component {
     return (
       <div className="header">
         <h1>Exchange Zero</h1>
-        <button
-              onClick={this.props.handleLogout}
-            >Logout</button>
+        <Link to="/"><button
+          onClick={() => {
+            this.props.handleLogout();
+            
+          }}
+          
+        >Logout</button>
+          </Link>
         {/* {this.props.currentuser ? (
           <>
             <p>{this.props.currentUser.username}</p>

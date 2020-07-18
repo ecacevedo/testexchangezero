@@ -10,11 +10,12 @@ import { loginUser, registerUser, verifyUser, removeToken } from './services/aut
 
 import { getCategories } from './services/categories';
 
-import { allItems, postItem, putItem } from './services/items'
+import { allItems, postItem, putItem, deleteItem } from './services/items'
 import ShowCategories from './ShowCategories';
 import ShowItems from './ShowItems'
 import CreateItem from './CreateItem';
 import UpdateItem from './UpdateItem'
+import ShowBasicItemsMap from './ShowBasicItemsMap'
 
 
 
@@ -60,8 +61,11 @@ export default class App extends Component {
 
   handleItemDelete = async (id) => {
     await deleteItem(id);
-    
+    this.setState(prevState => ({
+      items: prevState.items.filter(item => item.id !== id)
+    }))
   }
+  
 
  
 
@@ -95,12 +99,19 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <Header
+        <Header 
+          
           handleSignup={this.handleSignup}
           handleLogin={this.handleLogin}
           currentUser={this.state.currentUser}
           handleLogout={this.handleLogout}
         />
+        <Route exact path='/' render={() => (
+          <ShowBasicItemsMap
+            items={this.state.items}
+           
+          />
+        )} />
         <Route path='/categories' render={() => (
           <ShowCategories
           categories ={this.state.categories}
@@ -109,7 +120,8 @@ export default class App extends Component {
 
         <Route exact path='/items' render={() => (
           <ShowItems
-          items ={this.state.items}
+            items={this.state.items}
+            handleItemDelete={this.handleItemDelete}
           />
         )} />
         <br/>
@@ -132,6 +144,8 @@ export default class App extends Component {
             id={id}
           />
         }} />
+        
+        
         
         <Footer/>
        
