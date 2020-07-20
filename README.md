@@ -39,20 +39,20 @@ Exchange Zero is a full stack app which for users to trade and give away unwante
  
 
 ###### Client (Front End)
-- [ ] Have a working, interactive React app, built using npx create-react-app.
-- [ ] Have at least 8 separate, rendered components in an organized and understandable React file structure.
+- [x] Have a working, interactive React app, built using npx create-react-app.
+- [x] Have at least 8 separate, rendered components in an organized and understandable React file structure.
 - [x] Utilize functional and class React components appropriately.
 - [x] Utilize state and props in your components efficiently.
 - [x] Use only React for DOM Manipulation.
-- [ ] Consume data from your Ruby on Rails API, and render that data in your components.
-- [ ] Utilize React Router, for client-side routing.
-- [ ] Demonstrate Full CRUD actions ( index, show, create, update, and delete ) on the front end.
+- [x] Consume data from your Ruby on Rails API, and render that data in your components.
+- [x] Utilize React Router, for client-side routing.
+- [x] Demonstrate Full CRUD actions ( index, show, create, update, and delete ) on the front end.
 
 
 ###### Styling
-- [ ] Be styled with CSS 
-- [ ] Use Flexbox 
-- [ ] Implement 2 media queries for responsive design on 3 screen sizes (including desktop).
+- [x] Be styled with CSS 
+- [x] Use Flexbox 
+- [x] Implement 2 media queries for responsive design on 3 screen sizes (including desktop).
 
 ###### Linting
 - [ ] Indent properly.
@@ -62,13 +62,13 @@ Exchange Zero is a full stack app which for users to trade and give away unwante
 - [ ] Remove all console.log()s and commented out code (functional notes and comments are okay).
 
 ###### Deployment
-- [ ] Deploy the fully functional front-end via Surge or Netlify.
-- [ ] Deploy the back-end via Heroku.
+- [x] Deploy the fully functional front-end via Surge or Netlify.
+- [x] Deploy the back-end via Heroku.
 
 ###### Procedural
-- [ ] Initialize a git repo on Github, with a link to your hosted project.
-- [ ] Have frequent commits, making a robust commit history at least every day. (75 commits minimum)
-- [ ] Use effective and safe branching and merging processes.
+- [x] Initialize a git repo on Github, with a link to your hosted project.
+- [x] Have frequent commits, making a robust commit history at least every day. (75 commits minimum)
+- [ x] Use effective and safe branching and merging processes.
 
 <br>
 
@@ -76,8 +76,8 @@ Exchange Zero is a full stack app which for users to trade and give away unwante
 
 - [x]User can sign in
 - [x]User can create account
-- [ ]User can create/edit/delete Items
-- [ ]User can view marketplace
+- [x]User can create/edit/delete Items
+- [x]User can view marketplace
 
 
 <br>

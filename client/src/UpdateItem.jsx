@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 
 export default class UpdateItem extends Component {
     state = {
-      item_name: '' 
+      item_name: '',
+      locationdetails: '',
+      image_url:'',
     }
   
   componentDidMount() {
@@ -19,14 +21,16 @@ export default class UpdateItem extends Component {
 
   setFormData = () => {
     this.setState({
-      item_name: this.props.itemItem.item_name
+      item_name: this.props.itemItem.item_name,
+      locationdetails: this.props.itemItem.locationdetails,
+      image_url: this.props.itemItem.image_url
     })
   }
 
   handleChange = (e) => {
-    const { value } = e.target;
+    const { name, value } = e.target;
     this.setState({
-      item_name: value 
+      [name]:value
       })
   }
 
@@ -42,7 +46,19 @@ export default class UpdateItem extends Component {
       >
         <label>
           <input type='text'
+            name= 'item_name'
+            placeholder='Item Name'
             value={this.state.item_name}
+            onChange={this.handleChange} />
+          <input type='text'
+            name='locationdetails'
+            placeholder='Location'
+            value={this.state.locationdetails}
+            onChange={this.handleChange} />
+          <input type='text'
+            name='image_url'
+            placeholder='Image URL'
+            value={this.state.image_url}
             onChange={this.handleChange} />
         </label>
         <button>Submit</button>

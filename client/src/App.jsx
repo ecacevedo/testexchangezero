@@ -16,6 +16,8 @@ import ShowItems from './ShowItems'
 import CreateItem from './CreateItem';
 import UpdateItem from './UpdateItem'
 import ShowBasicItemsMap from './ShowBasicItemsMap'
+import CategoryPage from './CategoryPage'
+import CategoryUpdate from './CategoryUpdate'
 
 
 
@@ -112,18 +114,30 @@ export default class App extends Component {
            
           />
         )} />
-        <Route path='/categories' render={() => (
+        <Route exact path='/categories' render={() => (
           <ShowCategories
           categories ={this.state.categories}
           />
         )} />
 
-        <Route exact path='/items' render={() => (
-          <ShowItems
-            items={this.state.items}
-            handleItemDelete={this.handleItemDelete}
+        { this.state.categories.length > 0 && <Route path='/categories/:id' render={(props) => (
+          <CategoryPage
+            {...props}
+          categories ={this.state.categories}
           />
-        )} />
+        )} />}
+        
+
+        
+        {this.state.currentUser &&
+          <Route exact path='/items' render={() => (
+            <ShowItems
+              items={this.state.items}
+              handleItemDelete={this.handleItemDelete}
+              currentUser={this.state.currentUser}
+            />
+          )} />
+        }
         <br/>
         <Route path='/items/new' render={(props) => (
           
@@ -137,12 +151,21 @@ export default class App extends Component {
         <Route path='/items/:id/edit' render={(props) => {
           const { id } = props.match.params;
           const itemItem = this.state.items.find(item => item.id === parseInt(id));
-          return <UpdateItem
+          return (
+            <>
+          <UpdateItem
             {...props}
             handleItemUpdate={this.handleItemUpdate}
             itemItem={itemItem}
-            id={id}
-          />
+                id={id}
+                
+              />
+              <CategoryUpdate
+                id={id}
+                categories={this.state.categories}
+              />
+            </>
+          )
         }} />
         
         

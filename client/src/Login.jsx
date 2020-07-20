@@ -30,7 +30,7 @@ export default class Login extends Component {
           onChange={this.handleChange}></input>
         <br/>
         <input
-          type="text"
+          type="password"
           name="password"
           placeholder="Password"
           value={password}

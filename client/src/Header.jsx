@@ -12,7 +12,7 @@ export default class Header extends Component {
   render() {
     return (
       <div className="header">
-        <h1>Exchange Zero</h1>
+        <Link to ="/"><h1>Exchange Zero</h1></Link>
         <Link to="/"><button
           onClick={() => {
             this.props.handleLogout();
@@ -21,18 +21,7 @@ export default class Header extends Component {
           
         >Logout</button>
           </Link>
-        {/* {this.props.currentuser ? (
-          <>
-            <p>{this.props.currentUser.username}</p>
-            <button
-              onClick={this.props.handleLogout}
-            >Logout</button>
-          </>
-
-        ) : ( */}
-            
-      
-            {/* <> */}
+        
             <Route path='/' exact render={(props) => (
               <Login
                 {...props}
@@ -51,8 +40,7 @@ export default class Header extends Component {
           
               />
             )} />
-       {/* </>
-            )} */}
+      
        
       </div>
      

@@ -5,16 +5,22 @@ import { item } from './services/items';
 
 export default function ShowItems(props) {
   return (
+
     <div>
       
       {props.items.map(items => (
-        <React.Fragment key={items.id}>
-        <p>{items.item_name} </p>
+        <React.Fragment key={items.id}>{
+          items.user_id == props.currentUser.id &&
+        <>
+          <p>{items.item_name} </p>
           <p>{items.locationdetails}</p>
           <img className="items-Image" src={items.image_url} />
           <Link to={`/items/${items.id}/edit`}><button>Edit</button></Link>
+
           <button onClick={() => props.handleItemDelete(items.id)}
-          >Delete</button>
+            >Delete</button>
+            </>
+        }
           
         </React.Fragment>
       ))}

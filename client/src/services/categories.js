@@ -6,3 +6,13 @@ export const getCategories = async () => {
   return resp.data;
 }
 
+export const getCategoriesId = async (id) => {
+  const resp = await api.get(`/categories/${id}`);
+  // debugger
+  return resp.data;
+}
+
+export const addCategories = async (item_id, id) => {
+  const resp = await api.get(`/items/${item_id}/category/${id}/`);
+  return resp.data;
+}
